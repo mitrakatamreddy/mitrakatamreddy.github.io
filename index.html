@@ -22,7 +22,7 @@
 <h3>The output on cURL</h3>
 <p>
   skatamre@e03609:~/git$ curl -i https://api.github.com/repos/Hacklone/private-bower/issues/189?'access_token'='c625a175df66662ec300f1d4b30ce3864a992cbf'
-HTTP/1.1 200 OK <br>
+<pre></pre>HTTP/1.1 200 OK <br>
 Server: GitHub.com <br>
 Date: Tue, 27 Oct 2015 15:39:37 GMT <br>
 Content-Type: application/json; charset=utf-8 <br>
@@ -97,7 +97,7 @@ X-GitHub-Request-Id: 81AE7CE2:7FC1:44C3261:562F9AB9 <br>
   },<br>
   "body": "Hi, I've worked to implement the ability to load private-bower on a \"siteBaseURL\", enabling the site to be moved to a sub directory.   This helps with hosting the site on a shared internal server or hosting behind a reverse proxy.\r\n\r\nFor the configuration file, I moved port and hostName options, under a group, called server.  This is where added the config for siteBaseURL.    This groups everything logically together.   I also ensured that, if people still had the port & hostName on the root, it would pick it up there, so that it would not break anyone's existing configuration.\r\n\r\nif the siteBaseURL is defined, private-bower will add one additional route, which is to redirect / to the specified URL.    So that people can still type in localhost:port when testing.\r\n\r\nAlso, fixed some inconsistencies with the 'default' heroku registry urls in the default config, and in the configurationManager.    Both are now the same, and use secure protocol.\r\n\r\nThanks!\r\n",<br>
   "closed_by": null<br>
-}<br>
+}<br></pre>
 skatamre@e03609:~/git$ <br>
 
 </p>
