@@ -1,125 +1,157 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!doctype html>
+<html>
   <head>
-    <meta charset="UTF-8">
-    <title>Mitrakatamreddy.GitHub.io by mitrakatamreddy</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>OAuth.io - Demo</title>
+    <link rel="stylesheet" href="library/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="library/bootstrap.min.js"></script>
+    <script src="library/oauth.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-42196684-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+
+    <!-- Boiletplate scripts (provider list / select event...) -->
+    <script src="javascripts/oauth-boilerplate.js"></script>
   </head>
   <body>
-    <section class="page-header">
-      <h1 class="project-name">Mitrakatamreddy.GitHub.io</h1>
-      <h2 class="project-tagline"></h2>
-    </section>
+    <div class="container">
+      <div class="row">
+        <div class="col col-lg-12">
+          <h1>
+            <img src="http://oauth.io/img/logo.png" class="pull-left" height="100" width="100"/><span style="display: block; font-size: 1.5em; position: relative; top: 8px; margin-left: 115px">Serverless OAuth is now possible</span>
+          </h1>
+          <p style="margin-left: 120px; margin-top: 0px"><a href="https://oauth.io">Visit OAuth.io</a> - <a href="https://github.com/oauth-io/oauth-js/tree/gh-pages">See the source on Github</a></p>
+        </div>
+      </div>
 
-    <section class="main-content">
-      <h3>Token Generation using OAUTH</h3>
-
-<p>The python code is written for OAUTH token genertaion and the link for the code  <a href="https://github.com/mitrakatamreddy/issue_codes/blob/master/tk_oauth.py">https://github.com/mitrakatamreddy/issue_codes/blob/master/tk_oauth.py.  </a>
-  The output for the code will be a string of TOKEN. </p>
- 
-<h3>Generation of issues_list on cURL</h3>
-
-<p>The issues_list is generated on cURL using command curl -i https://api.github.com/repos/username/reponame/issues?'access_token'='OAUTH-TOKEN'</p>
-<h3>The output on cURL</h3>
-<p>
-  skatamre@e03609:~/git$ curl -i https://api.github.com/repos/Hacklone/private-bower/issues/189?'access_token'='c625a175df66662ec300f1d4b30ce3864a992cbf'
-HTTP/1.1 200 OK<br>
-Server: GitHub.com<br>
-Date: Tue, 27 Oct 2015 15:39:37 GMT<br>
-Content-Type: application/json; charset=utf-8<br>
-Content-Length: 3040<br>
-Status: 200 OK<br>
-X-RateLimit-Limit: 5000<br>
-X-RateLimit-Remaining: 4983<br>
-X-RateLimit-Reset: 1445960838<br>
-Cache-Control: private, max-age=60, s-maxage=60<br>
-Last-Modified: Tue, 27 Oct 2015 06:32:02 GMT<br>
-ETag: "c9082828d2f6b81ba11ea69fe6715aa8"<br>
-X-OAuth-Scopes: repo, user<br>
-X-Accepted-OAuth-Scopes: <br>
-Vary: Accept, Authorization, Cookie, X-GitHub-OTP <br>
-X-GitHub-Media-Type: github.v3 <br>
-X-XSS-Protection: 1; mode=block <br>
-X-Frame-Options: deny <br>
-Content-Security-Policy: default-src 'none' <br>
-Access-Control-Allow-Credentials: true <br>
-Access-Control-Expose-Headers: ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval <br>
-Access-Control-Allow-Origin: * <br>
-Strict-Transport-Security: max-age=31536000; includeSubdomains; preload <br>
-X-Content-Type-Options: nosniff <br>
-Vary: Accept-Encoding <br>
-X-Served-By: 7f48e2f7761567e923121f17538d7a6d <br>
-X-GitHub-Request-Id: 81AE7CE2:7FC1:44C3261:562F9AB9 <br>
-
-{ <br>
-  "url": "https://api.github.com/repos/Hacklone/private-bower/issues/189", <br>
-  "labels_url": "https://api.github.com/repos/Hacklone/private-bower/issues/189/labels{/name}", <br>
-  "comments_url": "https://api.github.com/repos/Hacklone/private-bower/issues/189/comments", <br>
-  "events_url": "https://api.github.com/repos/Hacklone/private-bower/issues/189/events", <br>
-  "html_url": "https://github.com/Hacklone/private-bower/pull/189", <br>
-  "id": 113516780, <br>
-  "number": 189, <br>
-  "title": "Feature/#66 base site url", <br>
-  "user": { <br>
-    "login": "royrico", <br>
-    "id": 8582535, <br>                                                                                                                                                                                                                        
-    "avatar_url": "https://avatars.githubusercontent.com/u/8582535?v=3", <br>                                                                                                                                                                   
-    "gravatar_id": "", <br>                                                                                                                                                                                                               
-    "url": "https://api.github.com/users/royrico",  <br>                                                                                                                                                                                         
-    "html_url": "https://github.com/royrico",  <br>                                                                                                                                                                                             
-    "followers_url": "https://api.github.com/users/royrico/followers", <br>                                                                                                                                                                      
-    "following_url": "https://api.github.com/users/royrico/following{/other_user}",  <br>                                                                                                                                                        
-    "gists_url": "https://api.github.com/users/royrico/gists{/gist_id}",    <br>                                                                                                                                                                 
-    "starred_url": "https://api.github.com/users/royrico/starred{/owner}{/repo}",  <br>                                                                                                                                                          
-    "subscriptions_url": "https://api.github.com/users/royrico/subscriptions",  <br>                                                                                                                                                             
-    "organizations_url": "https://api.github.com/users/royrico/orgs",  <br>                                                                                                                                                                 
-    "repos_url": "https://api.github.com/users/royrico/repos",    <br>                                                                                                                                                                           
-    "events_url": "https://api.github.com/users/royrico/events{/privacy}",   <br>                                                                                                                                                                
-    "received_events_url": "https://api.github.com/users/royrico/received_events", <br>	
-    "type": "User", <br>                                                                                                                                                                                                                  
-    "site_admin": false    <br>                                                                                                                                                                                                                  
-  },   <br>                                                                                                                                                                                                                                      
-  "labels": [ <br>                                                                                                                                                                                                                               
-                                                                                                                                                                                                                                             
-  ],  <br>                                                                                                                                                                                                                                       
-  "state": "open",  <br>                                                                                                                                                                                                                       
-  "locked": false,  <br>                                                                                                                                                                                                                         
-  "assignee": null, <br>
-  "milestone": null, <br>
-  "comments": 0, <br>
-  "created_at": "2015-10-27T06:32:02Z", <br>
-  "updated_at": "2015-10-27T06:32:02Z", <br>
-  "closed_at": null, <br>
-  "pull_request": { <br>
-    "url": "https://api.github.com/repos/Hacklone/private-bower/pulls/189", <br>
-    "html_url": "https://github.com/Hacklone/private-bower/pull/189", <br>
-    "diff_url": "https://github.com/Hacklone/private-bower/pull/189.diff", <br>
-    "patch_url": "https://github.com/Hacklone/private-bower/pull/189.patch" <br>
-  }, <br>
-  "body": "Hi, I've worked to implement the ability to load private-bower on a \"siteBaseURL\", enabling the site to be moved to a sub directory.   This helps with hosting the site on a shared internal server or hosting behind a reverse proxy.\r\n\r\nFor the configuration file, I moved port and hostName options, under a group, called server.  This is where added the config for siteBaseURL.    This groups everything logically together.   I also ensured that, if people still had the port & hostName on the root, it would pick it up there, so that it would not break anyone's existing configuration.\r\n\r\nif the siteBaseURL is defined, private-bower will add one additional route, which is to redirect / to the specified URL.    So that people can still type in localhost:port when testing.\r\n\r\nAlso, fixed some inconsistencies with the 'default' heroku registry urls in the default config, and in the configurationManager.    Both are now the same, and use secure protocol.\r\n\r\nThanks!\r\n",<br>
-  "closed_by": null <br>
-} <br>
-skatamre@e03609:~/git$ 
-
-</p>
-<h3>Generatinbg issues_list using request module on python</h3>
-
-<p>
-  The issues are listed by th python code. The link for the code is <a href "https://github.com/mitrakatamreddy/issue_codes/blob/master/issues_privaterepo.py" ></a>
-</p>
-<h3>The output for the code </h3>
-
-<p>
-  <img src="mdn-logo-sm.png">
-</p>
+      <div class="row" style="margin-top: 20px">
+        <div class="col col-lg-3">
+          <div style="margin-top: 5px">
+            <div id="provider_actions" style="float: right; display:inline-block;">
+              <div class="btn-group" data-toggle="buttons-radio">
+                <button type="button" class="btn btn-default active" id="popup_method">Popup</button>
+                <button type="button" ng-hover class="btn btn-default" id="redirect_method">Redirect</button>
+              </div>
+            </div>
+            <div style="clear: right; padding-top: 5px;" id="oauth-connect">
+              <button class="btn btn-block btn-default" data-provider="facebook" style="text-align: left" ng->
+                <span style="display: block; margin-left: 10px">
+                  <img src="https://oauth.io/api/providers/facebook/logo" width="32" height="32" class="pull-left">
+                  <span style="display: block; margin-left: 43px; position: relative; top: 5px">Connect with Facebook</span>
+                </span>
+              </button>
+              <button class="btn btn-block btn-default" style="text-align: left" data-provider="twitter">
+                <span style="display: block; margin-left: 10px">
+                  <img src="https://oauth.io/api/providers/twitter/logo" width="32" height="32" class="pull-left">
+                  <span style="display: block; margin-left: 43px; position: relative; top: 5px">Connect with Twitter</span>
+                </span>
+              </button>
+              <button class="btn btn-block btn-default" style="text-align: left" data-provider="github">
+                <span style="display: block; margin-left: 10px">
+                  <img src="https://oauth.io/api/providers/github/logo" width="32" height="32" class="pull-left">
+                  <span style="display: block; margin-left: 43px; position: relative; top: 5px">Connect with Github</span>
+                </span>
+              </button>
+              <button class="btn btn-block btn-default" style="text-align: left" data-provider="stackexchange">
+                <span style="display: block; margin-left: 10px">
+                  <img src="https://oauth.io/api/providers/stackexchange/logo" width="32" height="32" class="pull-left">
+                  <span style="display: block; margin-left: 43px; position: relative; top: 5px">Connect with Stack Exchange</span>
+                </span>
+              </button>
+              <button class="btn btn-block btn-default" style="text-align: left" data-provider="soundcloud">
+                <span style="display: block; margin-left: 10px">
+                  <img src="https://oauth.io/api/providers/soundcloud/logo" width="32" height="32" class="pull-left">
+                  <span style="display: block; margin-left: 43px; position: relative; top: 5px">Connect with Soundcloud</span>
+                </span>
+              </button>
+              <button class="btn btn-block btn-default" style="text-align: left" data-provider="youtube">
+                <span style="display: block; margin-left: 10px">
+                  <img src="https://oauth.io/api/providers/youtube/logo" width="32" height="32" class="pull-left">
+                  <span style="display: block; margin-left: 43px; position: relative; top: 5px">Connect with Youtube</span>
+                </span>
+              </button>
+              <button class="btn btn-block btn-default" style="text-align: left" data-provider="tumblr">
+                <span style="display: block; margin-left: 10px">
+                  <img src="https://oauth.io/api/providers/tumblr/logo" width="32" height="32" class="pull-left">
+                  <span style="display: block; margin-left: 43px; position: relative; top: 5px">Connect with Tumblr</span>
+                </span>
+              </button>
+              <button class="btn btn-block btn-default" style="text-align: left" data-provider="instagram">
+                <span style="display: block; margin-left: 10px">
+                  <img src="https://oauth.io/api/providers/instagram/logo" width="32" height="32" class="pull-left">
+                  <span style="display: block; margin-left: 43px; position: relative; top: 5px">Connect with Instagram</span>
+                </span>
+              </button>
+              <button class="btn btn-block btn-default" style="text-align: left" data-provider="linkedin">
+                <span style="display: block; margin-left: 10px">
+                  <img src="https://oauth.io/api/providers/linkedin/logo" width="32" height="32" class="pull-left">
+                  <span style="display: block; margin-left: 43px; position: relative; top: 5px">Connect with Linkedin</span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col col-lg-9">
+          <h4>How to use OAuth.io SDK? it's really simple!</h4>
+          <p>After loading oauth.js, you can use <code>OAuth</code> object to authorize your user like this:</p>
+          <pre id="code"><span style="color: #777">// Initialize with your OAuth.io app public key</span>
+OAuth.initialize('<span class="text-success"><strong>Public key</strong></span>');
+OAuth.popup('<span class="provider" style="color: #428bca; font-weight: bold">facebook</span>', function(<span style="color: red; font-weight: bold">error</span>, <span style="color: orange; font-weight: bold">success</span>){
+  <span style="color: #777">// See the result below</span>
+});
 
 
-      <footer class="site-footer">
 
-        <span class="site-footer-credits"> </span>
-      </footer>
 
-    </section>
 
-  
+</pre>
+          <h4 id="success-text" style="display: none">Successful connection with <span class="provider stay"></span></h4>
+          <h4 id="error-text" style="display: none">Connection fail with <span></span></h4>
+          <pre id="result">
+          </pre>
+          <img id="placeholder-result" src="http://oauth-io.github.io/oauth-js/images/try.png">
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col col-lg-12">
+          <h4 style="text-align: center">70+ APIs supported</h4>
+
+          <div id="providers" style="text-align: center">
+          </div>
+          <hr />
+          <div class="row" style="margin: 25px 0">
+            <div class="col col-lg-12" style="text-align: center">
+              <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://oauth-io.github.io/oauth-js/" data-via="oauth_io" data-lang="en">Tweet</a>
+              <a href="https://twitter.com/oauth_io" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @oauth_io</a>
+            </div>
+          </div>
+        </div>
+        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <div style="margin-top: 20px">
+            <p style="text-align: center"><strong>powered by <a href="https://oauth.io">OAuth.io</a> & <a href="http://webshell.io">Webshell</a></strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="https://github.com/oauth-io/oauth-js" style="position: absolute; top: 0; right: 0"><img src="images/fork-me.png"></a>
   </body>
 </html>
