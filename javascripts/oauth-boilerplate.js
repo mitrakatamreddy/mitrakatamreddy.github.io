@@ -50,7 +50,7 @@ $(function() {
 
 
     // Initialize OAuth with the public key
-    OAuth.initialize('qb24rqcWu7g5eAUJ2IU6px8WkYE');
+    OAuth.initialize('QqBvqifUCVoOdGrSHB3GNImp1LY');
 
     $('#oauth-connect button').click(function(e) {
 		e.preventDefault();
