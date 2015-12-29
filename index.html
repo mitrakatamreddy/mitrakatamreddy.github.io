@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+<head><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="library/bootstrap.min.js"></script>
+    <script src="library/oauth.js"></script>
+ </head>
 <body>
 
 <p>Click to get the issues of the repository. Later enter the username and repo_name</p>
@@ -8,10 +12,19 @@
 
 <script>
 function myFunction() {
-
-    var myWindow = window.open("https://github.com/login/oauth/authorize?client_id=b7097d6ddc5c828d90d7&response_type=code&redirect_uri=https%3A%2F%2Foauth.io%2Fauth&scope=repo%20user%20user%3Aemail&state=XjUbW7y8_Q_0KKdSDHi87HoxUXs");
+OAuth.initialize('QqBvqifUCVoOdGrSHB3GNImp1LY');
+//Example with Facebook
+OAuth.popup('github').done(function(github) {
+  //make API calls with `facebook`
+}).fail(function(err) {
+  //todo when the OAuth flow failed
+});
+//var username = prompt("Please enter your username", "Username");
+//var repo_name = prompt("Please enter your repository name", "repo_name");
+    //var myWindow = window.open("https://api.github.com/repos/"+username+"/"+repo_name+"/issues?access_token=e483a43d49ce7f65d03dcf4e6008d5f53d68f621");
 }
 </script>
 
 </body>
 </html>
+ 
