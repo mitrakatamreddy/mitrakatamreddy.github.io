@@ -14,10 +14,15 @@
 function myFunction() {
 OAuth.initialize('QqBvqifUCVoOdGrSHB3GNImp1LY');
 //Example with Facebook
-OAuth.popup('github').done(function(github) {
-  //make API calls with `facebook`
-}).fail(function(err) {
-  //todo when the OAuth flow failed
+//Using popup (option 1)
+OAuth.popup('facebook')
+.done(function(result) {
+ console.log(result.access_token);
+  //use result.access_token in your API request 
+  //or use result.get|post|put|del|patch|me methods (see below)
+})
+.fail(function (err) {
+  //handle error with err
 });
 //var username = prompt("Please enter your username", "Username");
 //var repo_name = prompt("Please enter your repository name", "repo_name");
