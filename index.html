@@ -17,6 +17,7 @@ OAuth.initialize('QqBvqifUCVoOdGrSHB3GNImp1LY');
 //Using popup (option 1)
 OAuth.popup('github')
 .done(function(result) {
+ window.alert(5);
  window.alert(result.access_token);
   //use result.access_token in your API request 
   //or use result.get|post|put|del|patch|me methods (see below)
