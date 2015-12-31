@@ -18,7 +18,7 @@ function myFunction() {
 ///OAuth.popup('github')
 ///.done(function(result) {
  window.alert(5);
- window.alert(result.access_token);
+/// window.alert(result.access_token);
  var username = prompt("Please enter your username", "Username");
 var repo_name = prompt("Please enter your repository name", "repo_name");
     var myWindow = window.open("https://api.github.com/repos/"+username+"/"+repo_name+"/issues?access_token="+result.access_token);
