@@ -12,11 +12,11 @@
 
 <script>
 function myFunction() {
-OAuth.initialize('QqBvqifUCVoOdGrSHB3GNImp1LY');
+////OAuth.initialize('QqBvqifUCVoOdGrSHB3GNImp1LY');
 //Example with Facebook
 //Using popup (option 1)
-OAuth.popup('github')
-.done(function(result) {
+////OAuth.popup('github')
+////.done(function(result) {
  window.alert(5);
  window.alert(result.access_token);
  var username = prompt("Please enter your username", "Username");
@@ -24,10 +24,10 @@ var repo_name = prompt("Please enter your repository name", "repo_name");
     var myWindow = window.open("https://api.github.com/repos/"+username+"/"+repo_name+"/issues?access_token="+result.access_token);
   //use result.access_token in your API request 
   //or use result.get|post|put|del|patch|me methods (see below)
-})
-.fail(function (err) {
+/////})
+////.fail(function (err) {
   //handle error with err
-});
+////});
 //var username = prompt("Please enter your username", "Username");
 //var repo_name = prompt("Please enter your repository name", "repo_name");
     //var myWindow = window.open("https://api.github.com/repos/"+username+"/"+repo_name+"/issues?access_token=e483a43d49ce7f65d03dcf4e6008d5f53d68f621");
